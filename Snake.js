@@ -5,7 +5,7 @@ function Snake(x, y, dna) {
 
     this.dna = dna;
 
-    this.directions = ["DIR_UP", "DIR_RIGHT", "DIR_DOWN", "DIR_LEFT"];
+    this.directions = ["DIR_UP", "DIR_UP_RIGHT","DIR_RIGHT", "DIR_DOWN_RIGHT", "DIR_DOWN", "DIR_DOWN_LEFT", "DIR_LEFT", "DIR_UP_LEFT"];
     this.direction = random(this.directions);
 
     this.speed = 1;
@@ -51,24 +51,32 @@ function Snake(x, y, dna) {
             }
 
             if (this.direction == "DIR_UP") {
-
                 this.y -= this.speed;
-
             }
             if (this.direction == "DIR_RIGHT") {
-
                 this.x += this.speed;
-
             }
             if (this.direction == "DIR_DOWN") {
-
                 this.y += this.speed;
-
             }
             if (this.direction == "DIR_LEFT") {
-
                 this.x -= this.speed;
-
+            }
+            if (this.direction == "DIR_UP_LEFT") {
+                this.x -= this.speed;
+                this.y -= this.speed;
+            }
+            if (this.direction == "DIR_UP_RIGHT") {
+                this.x += this.speed;
+                this.y -= this.speed;
+            }
+            if (this.direction == "DIR_DOWN_RIGHT") {
+                this.x += this.speed;
+                this.y += this.speed;
+            }
+            if (this.direction == "DIR_DOWN_LEFT") {
+                this.x -= this.speed;
+                this.y += this.speed;
             }
 
             if (this.x < 0) { this.x = grid.cols }
