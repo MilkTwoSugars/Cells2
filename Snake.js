@@ -17,8 +17,10 @@ function Snake(x, y, dna) {
 
         if (this.energy > 0) {
 
-            fill(this.dna.colour);
+            fill(0, BACKGROUND_COLOUR * 7, 0);
             ellipse(this.x * resolution, this.y * resolution, this.dna.size, this.dna.size);
+            fill(this.dna.colour);
+            ellipse(this.x * resolution, this.y * resolution, this.dna.size / 1.75, this.dna.size / 1.75);
 
         } else if (this.energy <= 0 && this.alive) {
             this.die(grid);
